@@ -1,0 +1,27 @@
+<html>
+  <div class="container">
+    <div class ="Task-List">
+      <h1>TODO List</h1>
+      <p>A place to store and track your todos</p>
+
+      <input type="text" [(ngModel)]="searchTask" placeholder="Filter The Items you need to complete">
+      <ol>
+        <li *ngFor="let item of filteredList let i = index" (click)="completeTask(i)"[ngStyle]="{ 'text-decoration': item.completed ? 'line-through' : 'none' }">
+
+          <button class="complete-button" *ngIf="item.completed">Completed</button> {{item.task}}  {{item.completed}}
+          <span class="remove" (click)="removeTask(i)">x</span>
+      </li>
+      </ol>
+
+      <h2 class="congratulations" *ngIf="checkCompleted">Congratulations on completing all of your tasks!</h2>
+
+
+      <form class ="add-form" #taskForm="ngForm" (ngSubmit)="addTask(taskForm)">
+      <input name="task" id="task" [(ngModel)]="newTask"  placeholder="Add your to-do" />
+      <br>
+      <button class="add-button">Add to List</button>
+      </form>
+    </div>
+  </div>
+
+</html>
