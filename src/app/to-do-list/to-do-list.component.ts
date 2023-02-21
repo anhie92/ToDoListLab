@@ -21,16 +21,16 @@ searchTask:string="";
     {task: "Crush all topics in Class", completed: false},
     {task: "Get ready for bed", completed: false}
   ];
-  filteredTasks : IToDo[]= this.toDoList
+  // filteredTasks : IToDo[]= this.toDoList
 
 
 
 
   completeTask(index: number) {
     this.toDoList[index].completed = !this.toDoList[index].completed;
-    this.filteredTasks = this.toDoList.filter((item) =>
-    item.task.toLowerCase().includes(this.searchTask.toLowerCase())
-  );
+    // this.filteredTasks = this.toDoList.filter((item) =>
+    // item.task.toLowerCase().includes(this.searchTask.toLowerCase())
+  // );
 
   }
 

@@ -8,7 +8,7 @@
       <ol>
         <li *ngFor="let item of filteredList let i = index" (click)="completeTask(i)"[ngStyle]="{ 'text-decoration': item.completed ? 'line-through' : 'none' }">
 
-          <button class="complete-button" *ngIf="item.completed">Completed</button> {{item.task}}  {{item.completed}}
+          <button class="complete-button" *ngIf="item.completed">Completed</button> {{item.task}}
           <span class="remove" (click)="removeTask(i)">x</span>
       </li>
       </ol>
